@@ -1,0 +1,1 @@
+﻿{"ContextClassName":"PersontestdbContext","DefaultDacpacSchema":null,"IdReplace":false,"IncludeConnectionString":true,"OutputPath":"","ProjectRootNamespace":"personExample","SelectedToBeGenerated":0,"Tables":[{"HasPrimaryKey":true,"Name":"dbo.Person"}],"UseDatabaseNames":false,"UseFluentApiOnly":true,"UseHandleBars":false,"UseInflector":false}

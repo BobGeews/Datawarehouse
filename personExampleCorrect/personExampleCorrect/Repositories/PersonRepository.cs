@@ -56,7 +56,17 @@ namespace personExampleCorrect.Repositories
 
         public void Update(long id, Person person)
         {
-            throw new NotImplementedException();
+            var updatePersons = ReadById(id);
+            if (updatePersons != null)
+            {
+                _persontestdbContext.Update(person);
+                _persontestdbContext.SaveChanges();
+                Console.WriteLine("Tiedot tallennettu onnistuneesti.");
+            }
+            else
+            {
+                Console.WriteLine("Tietojen tallennus epäonnistui. Henkilöä ei ole olemassa!");
+            }
         }
     }
 }

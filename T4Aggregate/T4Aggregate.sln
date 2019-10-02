@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "T4Aggregate", "T4Aggregate\T4Aggregate.dtproj", "{C6EF46B4-E905-4ECC-8427-4C75045EB441}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6EF46B4-E905-4ECC-8427-4C75045EB441}.Development|Default.ActiveCfg = Development
+		{C6EF46B4-E905-4ECC-8427-4C75045EB441}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9C12D987-EBA9-4DBB-A7BB-8B445C9AD346}
+	EndGlobalSection
+EndGlobal
