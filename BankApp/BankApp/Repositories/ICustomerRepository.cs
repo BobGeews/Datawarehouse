@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BankApp.Repositories
 {
-    interface ICustomerRepository
+    public interface ICustomerRepository
     {
         //CRUD
         void Create(Customer customer);
