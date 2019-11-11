@@ -8,15 +8,18 @@ namespace BankApp
     {
         private static readonly BankRepository _bankRepository = new BankRepository();
         private static readonly CustomerRepository _customerRepository = new CustomerRepository();
+        private static readonly TransactionRepository _transactionRepository = new TransactionRepository();
+        private static readonly AccountRepository _accountRepository = new AccountRepository();
+
         static void Main(string[] args)
         {
-            BankRepository bankRepository = new BankRepository();
-            CustomerRepository customerRepository = new CustomerRepository();
-
+            
             //bankRepository.Create(newBank);
             //UpdateBank(5);
-            bankRepository.ReadAll();
-            customerRepository.ReadAll();
+            _bankRepository.ReadAll();
+            _customerRepository.ReadAll();
+            _accountRepository.ReadAll();
+            _transactionRepository.ReadById(1);
 
         }
         //Päivitä jo OLEMASSA OLEVAN pankin tietoja
