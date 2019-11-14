@@ -20,13 +20,7 @@ namespace BankApp
             Console.WriteLine("-----------------------------------------------------------");
             _accountRepository.ReadAll();
             Console.WriteLine("-----------------------------------------------------------");
-            //CreateBank();
-            //DeleteBank();
-            //UpdateBank();
-            //UpdateCustomer();
-            //DeleteCustomer();
-            //CreateCustomerAndAccount();
-            //CreateTransactionForCustomer();
+    
             string userInput = null;
             string msg = "";
 
@@ -160,6 +154,10 @@ namespace BankApp
             newAccount.IBAN = Console.ReadLine();
             Console.Write("Syötä uuden tilin nimi: ");
             newAccount.Name = Console.ReadLine();
+            Console.Write("Tilille talletettavan rahan määrä: ");
+            decimal amount = Convert.ToDecimal(Console.ReadLine());
+            newAccount.Balance = amount;
+            
 
             _accountRepository.Create(newAccount);
         }
@@ -167,7 +165,7 @@ namespace BankApp
         {
             Transaction newTransaction = new Transaction();
             Console.Write("Syötä asiakkaan Id, kenelle haluat luoda uuden tilitapahtuman: ");
-            long id = Convert.ToInt64(Console.ReadLine());
+            long id = long.Parse(Console.ReadLine());
             var account = _accountRepository.ReadById(id);
             newTransaction.IBAN = account.IBAN;
             Console.Write("Syötä määrä: ");
@@ -177,6 +175,6 @@ namespace BankApp
 
             _transactionRepository.Create(newTransaction);
         }
-
+  
     }
 }
