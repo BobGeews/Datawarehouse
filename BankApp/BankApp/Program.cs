@@ -13,20 +13,75 @@ namespace BankApp
 
         static void Main(string[] args)
         {
-            
+
             _bankRepository.ReadAll();
+            Console.WriteLine("-----------------------------------------------------------");
             _customerRepository.ReadAll();
+            Console.WriteLine("-----------------------------------------------------------");
             _accountRepository.ReadAll();
+            Console.WriteLine("-----------------------------------------------------------");
             //CreateBank();
             //DeleteBank();
             //UpdateBank();
             //UpdateCustomer();
             //DeleteCustomer();
             //CreateCustomerAndAccount();
-            CreateTransactionForCustomer();
-            
+            //CreateTransactionForCustomer();
+            string userInput = null;
+            string msg = "";
 
+            do
+            {
+                userInput = Choise();
+                switch (userInput.ToUpper())
+                {
+                    case "1":
+                        CreateBank();
+                        msg = "Uusi pankki luotu";
+                        break;
+                    case "2":
+                        UpdateBank();
+                        msg = "Pankin tiedot päivitetty";
+                        break;
+                    case "3":
+                        DeleteBank();
+                        msg = "Pankki poistettu";
+                        break;
+                    case "4":
+                        CreateCustomerAndAccount();
+                        msg = "Asiakas ja tili luotu";
+                        break;
+                    case "5":
+                        UpdateCustomer();
+                        break;
+                    case "6":
+                        DeleteCustomer();
+                        msg = "Pankin asiakkaat tulostettu";
+                        break;
+                    case "7":
+                        CreateTransactionForCustomer();
+                        msg = "Asiakkaan tiedot päivitetty";
+                        break;
+                    case "X":
+                        msg = "Sovellus suljetaan";
+                        break;
+                    default:
+                        msg = "Yritä uudestaan oikealla näppäimellä";
+                        break;
+                }
+                Console.WriteLine(msg);
+            } while (userInput.ToUpper() != "X");
         }
+            static string Choise()
+            {
+                Console.WriteLine("[1] Lisää pankki\n[2] Päivitä pankki\n[3] Poista pankki\n[4] Lisää pankkiin asiakas ja tili\n[5] Päivitä asiakastietoja" +
+                    "\n[6] Poista asiakas\n[7] Luo tilitapahtumia asiakkaalle\n[X] Sammuta sovellus");
+                Console.Write("Valitse mitä tehdään: ");
+                string choise = Console.ReadLine();
+                return choise;
+            }
+
+        
         //Päivitä jo OLEMASSA OLEVAN pankin tietoja
         static void UpdateBank()
         {
@@ -43,15 +98,15 @@ namespace BankApp
         //Uuden pankin luominen
         static void CreateBank()
         {
-            
+
             Bank newBank = new Bank();
             Console.Write("Anna Pankille nimi: ");
-            newBank.Name= Console.ReadLine();
+            newBank.Name = Console.ReadLine();
             Console.Write("Anna Pankille BIC: ");
-            newBank.BIC= Console.ReadLine();
+            newBank.BIC = Console.ReadLine();
             Console.Write("Anna pankille ID: ");
             newBank.Id = Convert.ToInt64(Console.ReadLine());
-            
+
             _bankRepository.Create(newBank);
         }
         //Pankin poistaminen
